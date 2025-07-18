@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semestre VI</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #800000;
+    }
+    .course {
+      cursor: pointer;
+      padding: 6px;
+    }
+    .course:hover {
+      background-color: #ffe4e4;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: #000000;
+    }
+    .back {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: #800000;
+    }
+  </style>
+</head>
+<body>
+  <h2>Semestre VI</h2>
+  <ul>
+    <li class="course" onclick="this.classList.toggle('completed')">Microbiología Clínica</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Diagnóstico Molecular</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Parasitología Clínica</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Electivo I (conducentes a diplomado)</li>
+  </ul>
+  <a class="back" href="../index.html">← Volver al inicio</a>
+</body>
+</html>
