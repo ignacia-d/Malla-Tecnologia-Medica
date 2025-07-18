@@ -1,196 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Malla Curricular Tecnología Médica</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #000;
-      padding: 30px;
-    }
-    h1 {
-      text-align: center;
-      color: #800000;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-    }
-    th, td {
-      border: 1px solid #800000;
-      padding: 8px;
-      text-align: left;
-      vertical-align: top;
-      min-width: 180px;
-    }
-    th {
-      background-color: #ffe4e4;
-      color: #800000;
-    }
-    .ramo {
-      cursor: pointer;
-      margin: 4px 0;
-      display: block;
-    }
-    .ramo:hover {
-      background-color: #f4dada;
-    }
-    .tachado {
-      text-decoration: line-through;
-      color: #999;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular TM</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Malla Curricular Tecnología Médica<br>Mención en Laboratorio Clínico, Hematología y Medicina Transfusional</h1>
-  <p style="text-align:center;">Haz clic para tachar los ramos. Solo podrás marcar uno si sus prerrequisitos ya están tachados.</p>
-  <table>
-    <thead>
-      <tr>
-        <th>Semestre I</th>
-        <th>Semestre II</th>
-        <th>Semestre III</th>
-        <th>Semestre IV</th>
-        <th>Semestre V</th>
-        <th>Semestre VI</th>
-        <th>Semestre VII</th>
-        <th>Semestre VIII</th>
-        <th>Semestre IX</th>
-        <th>Semestre X</th>
-      </tr>
-    </thead>
-    <tbody>
-           <tr>
-        <td>
-          <span class="ramo" id="PrincipiosMatematicos">Principios Matemáticos</span>
-          <span class="ramo" id="BiologiaCelular">Biología Celular</span>
-          <span class="ramo" id="TallerIntegradoCiencias">Taller Integrado en Ciencias</span>
-          <span class="ramo" id="IntroTecnologiaMedica">Introducción a la Tecnología Médica</span>
-          <span class="ramo" id="InglesI">Inglés I</span>
-          <span class="ramo" id="TallerComunicacion">Taller de Competencias Comunicativas</span>
-        </td>
-        <td>
-          <span class="ramo" id="Biofisica">Biofísica</span>
-          <span class="ramo" id="Urgencia">Atención Básica de Urgencia</span>
-          <span class="ramo" id="Biomoleculas">Biomoléculas Estructurales y Función</span>
-          <span class="ramo" id="Anatomia">Anatomía</span>
-          <span class="ramo" id="InglesII">Inglés II</span>
-          <span class="ramo" id="ElectivoFG1">Electivo Formación General I</span>
-        </td>
-        <td>
-          <span class="ramo" id="Estadistica">Estadística y Epidemiología</span>
-          <span class="ramo" id="Histologia">Histología</span>
-          <span class="ramo" id="FundBioquimica">Fundamentos en Bioquímica</span>
-          <span class="ramo" id="Fisiologia">Fisiología</span>
-          <span class="ramo" id="SaludSociedad">Salud y Sociedad</span>
-          <span class="ramo" id="ElectivoFG2">Electivo Formación General II</span>
-        </td>
-        <td>
-          <span class="ramo" id="Bioseguridad">Bioseguridad y Procesos Preanalíticos</span>
-          <span class="ramo" id="InmunologiaBasica">Inmunología Básica</span>
-          <span class="ramo" id="BioquimicaI">Bioquímica Clínica I</span>
-          <span class="ramo" id="Fisiopatologia">Fisiopatología</span>
-          <span class="ramo" id="Etica">Ética Profesional</span>
-          <span class="ramo" id="ElectivoFG3">Electivo Formación General III</span>
-        </td>
-        <td>
-          <span class="ramo" id="MicrobiologiaBasica">Microbiología Básica</span>
-          <span class="ramo" id="InmunologiaClinica">Inmunología Clínica</span>
-          <span class="ramo" id="BioquimicaII">Bioquímica Clínica II</span>
-          <span class="ramo" id="GestionLaboratorio">Gestión de Calidad y Administración de Laboratorio</span>
-          <span class="ramo" id="PersonaSentido">Persona y Sentido</span>
-        </td>
-        <td>
-          <span class="ramo" id="MicrobiologiaClinica">Microbiología Clínica</span>
-          <span class="ramo" id="DiagnosticoMolecular">Diagnóstico Molecular</span>
-          <span class="ramo" id="Parasitologia">Parasitología Clínica</span>
-          <span class="ramo" id="ElectivoI">Electivo I</span>
-        </td>
-        <td>
-          <span class="ramo" id="Inmunohematologia">Inmunohematología</span>
-          <span class="ramo" id="HematologiaBasica">Hematología Básica</span>
-          <span class="ramo" id="IntegradoClinicoI">Integrado Clínico I</span>
-          <span class="ramo" id="ElectivoII">Electivo II</span>
-        </td>
-        <td>
-          <span class="ramo" id="MedicinaTransfusional">Medicina Transfusional</span>
-          <span class="ramo" id="HematologiaClinica">Hematología Clínica</span>
-          <span class="ramo" id="Metodologia">Metodología de la Investigación</span>
-          <span class="ramo" id="ElectivoIII">Electivo III</span>
-        </td>
-        <td>
-          <span class="ramo" id="CasosClinicos">Análisis Integral de Casos Clínicos</span>
-          <span class="ramo" id="IntegradoClinicoII">Integrado Clínico II</span>
-          <span class="ramo" id="SeminarioInvestigacion">Seminario de Investigación</span>
-          <span class="ramo" id="Empleabilidad">Taller de Empleabilidad</span>
-        </td>
-        <td>
-          <span class="ramo" id="InternadoMicro">Internado Profesional Micro-Parasitología</span>
-          <span class="ramo" id="InternadoHematologia">Internado Profesional Hematología Clínica</span>
-          <span class="ramo" id="InternadoTransfusional">Internado Profesional Medicina Transfusional</span>
-          <span class="ramo" id="InternadoQuimica">Internado Profesional Química Clínica</span>
-        </td>
-      </tr>
-    </tbody>
-  </table> 
-    <script>
-    const prerrequisitos = {
-      Biofisica: ["PrincipiosMatematicos"],
-      Biomoleculas: ["TallerIntegradoCiencias"],
-      InglesII: ["InglesI"],
-      Histologia: ["BiologiaCelular"],
-      FundBioquimica: ["Biomoleculas"],
-      Fisiologia: ["Anatomia"],
-      Bioseguridad: ["Urgencia"],
-      InmunologiaBasica: ["Histologia"],
-      BioquimicaI: ["FundBioquimica"],
-      Fisiopatologia: ["Fisiologia"],
-      MicrobiologiaBasica: ["FundBioquimica"],
-      InmunologiaClinica: ["InmunologiaBasica"],
-      BioquimicaII: ["BioquimicaI"],
-      GestionLaboratorio: ["BioquimicaI"],
-      MicrobiologiaClinica: ["MicrobiologiaBasica"],
-      DiagnosticoMolecular: ["MicrobiologiaBasica"],
-      Parasitologia: ["InmunologiaClinica"],
-      ElectivoI: ["GestionLaboratorio"],
-      Inmunohematologia: ["InmunologiaClinica"],
-      HematologiaBasica: ["Fisiopatologia"],
-      IntegradoClinicoI: ["Parasitologia", "MicrobiologiaClinica", "BioquimicaII"],
-      ElectivoII: ["ElectivoI"],
-      MedicinaTransfusional: ["Inmunohematologia"],
-      HematologiaClinica: ["HematologiaBasica"],
-      Metodologia: ["HematologiaBasica"],
-      ElectivoIII: ["ElectivoII"],
-      CasosClinicos: ["MedicinaTransfusional", "HematologiaClinica"],
-      IntegradoClinicoII: ["MedicinaTransfusional", "HematologiaClinica"],
-      SeminarioInvestigacion: ["Metodologia"],
-      Empleabilidad: ["Metodologia"],
-      InternadoMicro: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
-      InternadoHematologia: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
-      InternadoTransfusional: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
-      InternadoQuimica: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"]
-    };
+  <header>
+    <h1>Malla Curricular - Tecnología Médica</h1>
+    <p>Mención en Laboratorio Clínico, Hematología y Medicina Transfusional</p>
+  </header>
 
-    document.querySelectorAll(".ramo").forEach(el => {
-      el.addEventListener("click", () => {
-        const id = el.id;
-        const requisitos = prerrequisitos[id];
-        if (requisitos) {
-          const completos = requisitos.every(pre => {
-            const celda = document.getElementById(pre);
-            return celda && celda.classList.contains("tachado");
-          });
-          if (!completos) {
-            alert("No puedes marcar este ramo sin aprobar su(s) prerrequisito(s).");
-            return;
-          }
-        }
-        el.classList.toggle("tachado");
-      });
-    });
-  </script>
+  <main class="malla">
+    <!-- Primer Año -->
+    <section class="año">
+      <h2>Primer Año</h2>
+      <div class="semestre">
+        <h3>Semestre I</h3>
+        <div class="ramos">
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Principios Matemáticos</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Biología Celular</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Taller Integrado en Ciencias</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Introducción a la Tecnología Médica</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Inglés I</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Taller de Competencias Comunicativas</div>
+        </div>
+      </div>
+
+      <div class="semestre">
+        <h3>Semestre II</h3>
+        <div class="ramos">
+          <div class="ramo" data-tooltip="Principios Matemáticos">Biofísica</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Atención Básica de Urgencia</div>
+          <div class="ramo" data-tooltip="Taller Integrado en Ciencias">Biomoléculas Estructurales y Función</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Anatomía</div>
+          <div class="ramo" data-tooltip="Inglés I">Inglés II</div>
+          <div class="ramo" data-tooltip="Sin prerrequisitos">Electivo Formación General I</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Malla desarrollada por [Tu Nombre]</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
