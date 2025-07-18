@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Malla Curricular TM - Tabla Interactiva Completa</title>
+<title>Malla Curricular TM - Tabla Completa</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@600;700&display=swap" rel="stylesheet" />
 <style>
   body {
@@ -20,7 +20,7 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 1rem auto 3rem;
     table-layout: fixed;
   }
@@ -29,10 +29,13 @@
     padding: 10px;
     text-align: left;
     vertical-align: middle;
+    word-wrap: break-word;
   }
   th {
     background-color: #800020;
     color: white;
+    font-weight: 700;
+    text-align: center;
   }
   td.ramo {
     background-color: #9b1c31;
@@ -51,22 +54,30 @@
     padding: 6px 10px;
     border-radius: 6px;
     white-space: normal;
-    width: 220px;
+    width: 240px;
     font-size: 0.85rem;
     z-index: 10;
   }
   input[type="checkbox"] {
     transform: scale(1.3);
-    margin-right: 8px;
+    margin-right: 6px;
     vertical-align: middle;
   }
   label {
     cursor: pointer;
     user-select: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
   }
   .tachado {
     text-decoration: line-through;
     opacity: 0.6;
+  }
+  /* Scroll horizontal para móviles */
+  .table-container {
+    overflow-x: auto;
   }
 </style>
 </head>
@@ -77,144 +88,391 @@
   <p style="text-align:center; font-style: italic; margin-bottom: 2rem;">Mención en Laboratorio Clínico, Hematología y Medicina Transfusional</p>
 </header>
 
-<h2>Tabla Interactiva de Ramos</h2>
+<h2>Tabla Horizontal Completa con Checkbox y Prerrequisitos</h2>
 
+<div class="table-container">
 <table>
   <thead>
     <tr>
-      <th style="width: 25%;">Año / Semestre</th>
-      <th>Ramos</th>
+      <th>Ramo / Semestre</th>
+      <th>1º Año<br>Semestre I</th>
+      <th>1º Año<br>Semestre II</th>
+      <th>2º Año<br>Semestre III</th>
+      <th>2º Año<br>Semestre IV</th>
+      <th>3º Año<br>Semestre V</th>
+      <th>3º Año<br>Semestre VI</th>
+      <th>4º Año<br>Semestre VII</th>
+      <th>4º Año<br>Semestre VIII</th>
+      <th>5º Año<br>Semestre IX</th>
+      <th>5º Año<br>Semestre X</th>
     </tr>
   </thead>
   <tbody>
 
-    <!-- Primer Año -->
-    <tr>
-      <td><strong>Primer Año - Semestre I</strong></td>
-      <td>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Principios Matemáticos</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Biología Celular</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Taller Integrado en Ciencias</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Introducción a la Tecnología Médica</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Inglés I</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Taller de Competencias Comunicativas</label>
-      </td>
-    </tr>
+<!-- Ramo / columnas -->
 
-    <tr>
-      <td><strong>Primer Año - Semestre II</strong></td>
-      <td>
-        <label title="Prerrequisito: Principios Matemáticos"><input type="checkbox" /> Biofísica</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Atención Básica de Urgencia</label><br/>
-        <label title="Prerrequisito: Taller Integrado en Ciencias"><input type="checkbox" /> Biomoléculas Estructurales y Función</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Anatomía</label><br/>
-        <label title="Prerrequisito: Inglés I"><input type="checkbox" /> Inglés II</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Electivo Formación General I</label>
-      </td>
-    </tr>
+<tr>
+  <td>Principios Matemáticos</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="pm" /><label for="pm">Principios Matemáticos</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <!-- Segundo Año -->
-    <tr>
-      <td><strong>Segundo Año - Semestre III</strong></td>
-      <td>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Estadística y Epidemiología</label><br/>
-        <label title="Prerrequisito: Biología Celular"><input type="checkbox" /> Histología</label><br/>
-        <label title="Prerrequisito: Biomoléculas Estructurales y Función"><input type="checkbox" /> Fundamentos en Bioquímica</label><br/>
-        <label title="Prerrequisito: Anatomía"><input type="checkbox" /> Fisiología</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Salud y Sociedad</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Electivo Formación General II</label>
-      </td>
-    </tr>
+<tr>
+  <td>Biología Celular</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="bc" /><label for="bc">Biología Celular</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <tr>
-      <td><strong>Segundo Año - Semestre IV</strong></td>
-      <td>
-        <label title="Prerrequisito: Atención Básica de Urgencia"><input type="checkbox" /> Bioseguridad y procesos preanalíticos</label><br/>
-        <label title="Prerrequisito: Histología"><input type="checkbox" /> Inmunología Básica</label><br/>
-        <label title="Prerrequisito: Fundamentos en Bioquímica"><input type="checkbox" /> Bioquímica Clínica I</label><br/>
-        <label title="Prerrequisito: Fisiología"><input type="checkbox" /> Fisiopatología</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Ética Profesional</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Electivo Formación General III</label>
-      </td>
-    </tr>
+<tr>
+  <td>Taller Integrado en Ciencias</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="tic" /><label for="tic">Taller Integrado en Ciencias</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <!-- Tercer Año -->
-    <tr>
-      <td><strong>Tercer Año - Semestre V</strong></td>
-      <td>
-        <label title="Prerrequisito: Fundamentos en Bioquímica"><input type="checkbox" /> Microbiología Básica</label><br/>
-        <label title="Prerrequisito: Inmunología Básica"><input type="checkbox" /> Inmunología Clínica</label><br/>
-        <label title="Prerrequisito: Bioquímica Clínica I y Fisiopatología"><input type="checkbox" /> Bioquímica Clínica II</label><br/>
-        <label title="Prerrequisito: Bioquímica Clínica I"><input type="checkbox" /> Gestión de Calidad y Administración de Laboratorio</label><br/>
-        <label title="Sin prerrequisitos"><input type="checkbox" /> Persona y Sentido</label>
-      </td>
-    </tr>
+<tr>
+  <td>Introducción a la Tecnología Médica</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="itm" /><label for="itm">Introducción a la Tecnología Médica</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <tr>
-      <td><strong>Tercer Año - Semestre VI</strong></td>
-      <td>
-        <label title="Prerrequisito: Microbiología Básica y Fisiopatología"><input type="checkbox" /> Microbiología Clínica</label><br/>
-        <label title="Prerrequisito: Microbiología Básica"><input type="checkbox" /> Diagnóstico Molecular</label><br/>
-        <label title="Prerrequisito: Inmunología Clínica"><input type="checkbox" /> Parasitología Clínica</label><br/>
-        <label title="Prerrequisito: Gestión de Calidad y Administración de Laboratorio"><input type="checkbox" /> Electivo I</label>
-      </td>
-    </tr>
+<tr>
+  <td>Inglés I</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="ing1" /><label for="ing1">Inglés I</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <!-- Cuarto Año -->
-    <tr>
-      <td><strong>Cuarto Año - Semestre VII</strong></td>
-      <td>
-        <label title="Prerrequisito: Inmunología Clínica"><input type="checkbox" /> Inmunohematología</label><br/>
-        <label title="Prerrequisito: Fisiopatología"><input type="checkbox" /> Hematología Básica</label><br/>
-        <label title="Prerrequisito: Parasitología Clínica, Microbiología Clínica, Bioquímica Clínica II"><input type="checkbox" /> Integrado Clínico I</label><br/>
-        <label title="Prerrequisito: Electivo I"><input type="checkbox" /> Electivo II</label>
-      </td>
-    </tr>
+<tr>
+  <td>Taller de Competencias Comunicativas</td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="tcc" /><label for="tcc">Taller de Competencias Comunicativas</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <tr>
-      <td><strong>Cuarto Año - Semestre VIII</strong></td>
-      <td>
-        <label title="Prerrequisito: Inmunohematología"><input type="checkbox" /> Medicina Transfusional</label><br/>
-        <label title="Prerrequisito: Hematología Básica, Diagnóstico Molecular"><input type="checkbox" /> Hematología Clínica</label><br/>
-        <label title="Prerrequisito: Hematología Básica, Integrado Clínico I"><input type="checkbox" /> Metodología de la Investigación</label><br/>
-        <label title="Prerrequisito: Electivo II"><input type="checkbox" /> Electivo III</label>
-      </td>
-    </tr>
+<!-- Segundo semestre 1º año -->
 
-    <!-- Quinto Año -->
-    <tr>
-      <td><strong>Quinto Año - Semestre IX</strong></td>
-      <td>
-        <label title="Prerrequisito: Medicina Transfusional, Hematología Clínica, Electivo III"><input type="checkbox" /> Análisis Integral de Casos Clínicos</label><br/>
-        <label title="Prerrequisito: Medicina Transfusional, Hematología Clínica"><input type="checkbox" /> Integrado Clínico II</label><br/>
-        <label title="Prerrequisito: Metodología de la Investigación"><input type="checkbox" /> Seminario de Investigación</label><br/>
-        <label title="Prerrequisito: Metodología de la Investigación"><input type="checkbox" /> Taller de Empleabilidad</label>
-      </td>
-    </tr>
+<tr>
+  <td>Biofísica</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Principios Matemáticos"><input type="checkbox" id="biof" /><label for="biof">Biofísica</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-    <tr>
-      <td><strong>Quinto Año - Semestre X</strong></td>
-      <td>
-        <label title="Prerrequisito: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" /> Internado Profesional Micro-Parasitología</label><br/>
-        <label title="Prerrequisito: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" /> Internado Profesional Hematología Clínica</label><br/>
-        <label title="Prerrequisito: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" /> Internado Profesional Medicina Transfusional</label><br/>
-        <label title="Prerrequisito: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" /> Internado Profesional Química Clínica</label>
-      </td>
-    </tr>
+<tr>
+  <td>Atención Básica de Urgencia</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="abu" /><label for="abu">Atención Básica de Urgencia</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 
-  </tbody>
+<tr>
+  <td>Biomoléculas Estructurales y Función</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Taller Integrado en Ciencias"><input type="checkbox" id="bef" /><label for="bef">Biomoléculas Estructurales y Función</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Anatomía</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="anat" /><label for="anat">Anatomía</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Inglés II</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Inglés I"><input type="checkbox" id="ing2" /><label for="ing2">Inglés II</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo Formación General I</td>
+  <td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="efg1" /><label for="efg1">Electivo Formación General I</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Segundo Año Semestre III -->
+
+<tr>
+  <td>Estadística y Epidemiología</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="ee" /><label for="ee">Estadística y Epidemiología</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Histología</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Biología Celular"><input type="checkbox" id="hist" /><label for="hist">Histología</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Fundamentos en Bioquímica</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Biomoléculas Estructurales y Función"><input type="checkbox" id="fqb" /><label for="fqb">Fundamentos en Bioquímica</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Fisiología</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Anatomía"><input type="checkbox" id="fisio" /><label for="fisio">Fisiología</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Salud y Sociedad</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="sys" /><label for="sys">Salud y Sociedad</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo Formación General II</td>
+  <td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="efg2" /><label for="efg2">Electivo Formación General II</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Segundo Año Semestre IV -->
+
+<tr>
+  <td>Bioseguridad y procesos preanalíticos</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Atención Básica de Urgencia"><input type="checkbox" id="bioseg" /><label for="bioseg">Bioseguridad y procesos preanalíticos</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Inmunología Básica</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Histología"><input type="checkbox" id="inmb" /><label for="inmb">Inmunología Básica</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Bioquímica Clínica I</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Fundamentos en Bioquímica"><input type="checkbox" id="bqc1" /><label for="bqc1">Bioquímica Clínica I</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Fisiopatología</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Fisiología"><input type="checkbox" id="fisp" /><label for="fisp">Fisiopatología</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Ética Profesional</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="etp" /><label for="etp">Ética Profesional</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo Formación General III</td>
+  <td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="efg3" /><label for="efg3">Electivo Formación General III</label></td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Tercer Año Semestre V -->
+
+<tr>
+  <td>Microbiología Básica</td>
+  <td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Fundamentos en Bioquímica"><input type="checkbox" id="mb" /><label for="mb">Microbiología Básica</label></td>
+  <td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Inmunología Clínica</td>
+  <td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Inmunología Básica"><input type="checkbox" id="imnc" /><label for="imnc">Inmunología Clínica</label></td>
+  <td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Bioquímica Clínica II</td>
+  <td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Bioquímica Clínica I y Fisiopatología"><input type="checkbox" id="bqc2" /><label for="bqc2">Bioquímica Clínica II</label></td>
+  <td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Gestión de Calidad y Administración de Laboratorio</td>
+  <td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Bioquímica Clínica I"><input type="checkbox" id="gcad" /><label for="gcad">Gestión de Calidad y Administración de Laboratorio</label></td>
+  <td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Persona y Sentido</td>
+  <td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Sin prerrequisitos"><input type="checkbox" id="ps" /><label for="ps">Persona y Sentido</label></td>
+  <td></td><td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Tercer Año Semestre VI -->
+
+<tr>
+  <td>Microbiología Clínica</td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Microbiología Básica y Fisiopatología"><input type="checkbox" id="mc" /><label for="mc">Microbiología Clínica</label></td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Diagnóstico Molecular</td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Microbiología Básica"><input type="checkbox" id="dm" /><label for="dm">Diagnóstico Molecular</label></td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Parasitología Clínica</td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Inmunología Clínica"><input type="checkbox" id="pc" /><label for="pc">Parasitología Clínica</label></td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo I</td>
+  <td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Gestión de Calidad y Administración de Laboratorio"><input type="checkbox" id="electivo1" /><label for="electivo1">Electivo I</label></td>
+  <td></td><td></td><td></td><td></td>
+</tr>
+
+<!-- Cuarto Año Semestre VII -->
+
+<tr>
+  <td>Inmunohematología</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Inmunología Clínica"><input type="checkbox" id="imh" /><label for="imh">Inmunohematología</label></td>
+  <td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Hematología Básica</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Fisiopatología"><input type="checkbox" id="hb" /><label for="hb">Hematología Básica</label></td>
+  <td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Integrado Clínico I</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Parasitología Clínica, Microbiología Clínica, Bioquímica Clínica II"><input type="checkbox" id="ic1" /><label for="ic1">Integrado Clínico I</label></td>
+  <td></td><td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo II</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Electivo I"><input type="checkbox" id="electivo2" /><label for="electivo2">Electivo II</label></td>
+  <td></td><td></td><td></td>
+</tr>
+
+<!-- Cuarto Año Semestre VIII -->
+
+<tr>
+  <td>Medicina Transfusional</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Inmunohematología"><input type="checkbox" id="mt" /><label for="mt">Medicina Transfusional</label></td>
+  <td></td><td></td>
+</tr>
+
+<tr>
+  <td>Hematología Clínica</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Hematología Básica, Diagnóstico Molecular"><input type="checkbox" id="hc" /><label for="hc">Hematología Clínica</label></td>
+  <td></td><td></td>
+</tr>
+
+<tr>
+  <td>Metodología de la Investigación</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Hematología Básica, Integrado Clínico I"><input type="checkbox" id="mi" /><label for="mi">Metodología de la Investigación</label></td>
+  <td></td><td></td>
+</tr>
+
+<tr>
+  <td>Electivo III</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Electivo II"><input type="checkbox" id="electivo3" /><label for="electivo3">Electivo III</label></td>
+  <td></td><td></td>
+</tr>
+
+<!-- Quinto Año Semestre IX -->
+
+<tr>
+  <td>Análisis Integral de Casos Clínicos</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica, Electivo III"><input type="checkbox" id="aicc" /><label for="aicc">Análisis Integral de Casos Clínicos</label></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Integrado Clínico II</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica"><input type="checkbox" id="ic2" /><label for="ic2">Integrado Clínico II</label></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Seminario de Investigación</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Metodología de la Investigación"><input type="checkbox" id="si" /><label for="si">Seminario de Investigación</label></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Taller de Empleabilidad</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisito: Metodología de la Investigación"><input type="checkbox" id="te" /><label for="te">Taller de Empleabilidad</label></td>
+  <td></td>
+</tr>
+
+<!-- Quinto Año Semestre X -->
+
+<tr>
+  <td>Internado Profesional Micro-Parasitología</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" id="ipmp" /><label for="ipmp">Internado Profesional Micro-Parasitología</label></td>
+</tr>
+
+<tr>
+  <td>Internado Profesional Hematología Clínica</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" id="iphc" /><label for="iphc">Internado Profesional Hematología Clínica</label></td>
+</tr>
+
+<tr>
+  <td>Internado Profesional Medicina Transfusional</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" id="ipmt" /><label for="ipmt">Internado Profesional Medicina Transfusional</label></td>
+</tr>
+
+<tr>
+  <td>Internado Profesional Química Clínica</td>
+  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad"><input type="checkbox" id="ipqc" /><label for="ipqc">Internado Profesional Química Clínica</label></td>
+</tr>
+
+</tbody>
 </table>
+</div>
 
 <script>
-  // Al marcar checkbox, tacha texto; si desmarca, quita tachado
+  // Tachar nombre cuando checkbox está marcado
   document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', e => {
-      const label = e.target.parentElement;
-      if (e.target.checked) {
-        label.classList.add('tachado');
-      } else {
-        label.classList.remove('tachado');
-      }
+    cb.addEventListener('change', () => {
+      const label = cb.nextElementSibling;
+      if (cb.checked) label.classList.add('tachado');
+      else label.classList.remove('tachado');
     });
   });
 </script>
