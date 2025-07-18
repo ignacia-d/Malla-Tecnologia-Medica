@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semestre I</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #800000;
+    }
+    .course {
+      cursor: pointer;
+      padding: 6px;
+    }
+    .course:hover {
+      background-color: #ffe4e4;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: #000000;
+    }
+    .back {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: #800000;
+    }
+  </style>
+</head>
+<body>
+  <h2>Semestre I</h2>
+  <ul>
+    <li class="course" onclick="this.classList.toggle('completed')">Principios Matemáticos</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Biología Celular</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Taller Integrado en Ciencias</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Introducción a la Tecnología Médica</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Inglés I</li>
+    <li class="course" onclick="this.classList.toggle('completed')">Taller de Competencias Comunicativas</li>
+  </ul>
+  <a class="back" href="../index.html">← Volver al inicio</a>
+</body>
+</html>
