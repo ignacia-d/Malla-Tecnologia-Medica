@@ -3,526 +3,235 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Malla Curricular TM - Tipo Horario</title>
+<title>Malla Curricular TM</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@600&display=swap');
-
   body {
     font-family: 'Nunito', sans-serif;
     background: #f8f0f2;
-    color: #333;
     margin: 20px;
+    color: #333;
   }
-
   h1, h2 {
     font-family: 'Raleway', sans-serif;
-    text-align: center;
     color: #800020;
+    margin-bottom: 10px;
   }
-
-  .tabla-malla {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
+  .año {
+    margin-bottom: 40px;
   }
-
-  .tabla-malla th, .tabla-malla td {
-    border: 1px solid #800020;
-    padding: 12px 8px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    transition: background-color 0.3s ease;
-  }
-
-  .tabla-malla th {
-    background-color: #800020;
-    color: white;
+  .años-titulo {
+    font-size: 1.6rem;
     font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #800020;
+    padding-bottom: 5px;
   }
-
-  /* Celdas de ramos */
-  .ramo {
-    background-color: #9b1c31;
+  .tabla-semestres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  .semestre {
+    background: #800020;
     color: white;
-    font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
+    padding: 10px;
   }
-
-  .ramo:hover {
-    background-color: #b72a45;
+  .semestre > h3 {
+    margin-top: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #9b1c31;
+    padding-bottom: 5px;
+    text-align: center;
   }
-
-  /* Cuando está marcado */
-  .ramo.marcado {
+  .ramos-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .ramos-lista li {
+    margin: 8px 0;
+    padding: 6px 10px;
+    background: #9b1c31;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease;
+    user-select: none;
+  }
+  .ramos-lista li:hover {
+    background: #b73753;
+  }
+  .ramos-lista li.tachado {
     text-decoration: line-through;
-    color: #ccc;
-    background-color: #4b0015;
+    color: #ddd;
+    background: #5a0000;
   }
-
   /* Tooltip */
-  .ramo[data-tooltip]:hover::after {
+  .ramos-lista li[data-tooltip]:hover::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%;
     left: 50%;
+    bottom: 120%;
     transform: translateX(-50%);
-    background-color: #333;
+    background: #333;
     color: #fff;
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    border-radius: 5px;
     white-space: nowrap;
-    font-size: 0.85rem;
-    z-index: 100;
-    opacity: 1;
-    pointer-events: none;
-  }
-
-  /* Fila para los ramos faltantes */
-  .vacío {
-    background-color: transparent;
-    cursor: default;
-  }
-
-  /* Para que texto no se corte en celular */
-  @media (max-width: 768px) {
-    .tabla-malla th, .tabla-malla td {
-      padding: 8px 4px;
-      font-size: 0.9rem;
-    }
+    z-index: 10;
   }
 </style>
 </head>
 <body>
 
 <h1>Malla Curricular - Tecnología Médica</h1>
-<h2>Mención Laboratorio Clínico, Hematología y Medicina Transfusional</h2>
+<p style="font-style: italic; max-width: 700px; margin-bottom: 30px;">
+  Mención en Laboratorio Clínico, Hematología y Medicina Transfusional
+</p>
 
-<table class="tabla-malla">
-  <thead>
-    <tr>
-      <th>Ramos / Semestres</th>
-      <th>Semestre I</th>
-      <th>Semestre II</th>
-      <th>Semestre III</th>
-      <th>Semestre IV</th>
-      <th>Semestre V</th>
-      <th>Semestre VI</th>
-      <th>Semestre VII</th>
-      <th>Semestre VIII</th>
-      <th>Semestre IX</th>
-      <th>Semestre X</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Ramo 1 -->
-    <tr>
-      <td>Principios Matemáticos</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Principios Matemáticos</td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-    </tr>
+<!-- Primer Año -->
+<div class="año">
+  <div class="años-titulo">Primer Año</div>
+  <div class="tabla-semestres">
+    <div class="semestre">
+      <h3>Semestre I</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Sin prerrequisitos">Principios Matemáticos</li>
+        <li data-tooltip="Sin prerrequisitos">Biología Celular</li>
+        <li data-tooltip="Sin prerrequisitos">Taller Integrado en Ciencias</li>
+        <li data-tooltip="Sin prerrequisitos">Introducción a la Tecnología Médica</li>
+        <li data-tooltip="Sin prerrequisitos">Inglés I</li>
+        <li data-tooltip="Sin prerrequisitos">Taller de Competencias Comunicativas</li>
+      </ul>
+    </div>
+    <div class="semestre">
+      <h3>Semestre II</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Principios Matemáticos">Biofísica</li>
+        <li data-tooltip="Sin prerrequisitos">Atención Básica de Urgencia</li>
+        <li data-tooltip="Prerrequisito: Taller Integrado en Ciencias">Biomoléculas Estructurales y Función</li>
+        <li data-tooltip="Sin prerrequisitos">Anatomía</li>
+        <li data-tooltip="Prerrequisito: Inglés I">Inglés II</li>
+        <li data-tooltip="Sin prerrequisitos">Electivo Formación General I</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-    <!-- Ramo 2 -->
-    <tr>
-      <td>Biología Celular</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Biología Celular</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Biología Celular">Histología</td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-    </tr>
+<!-- Segundo Año -->
+<div class="año">
+  <div class="años-titulo">Segundo Año</div>
+  <div class="tabla-semestres">
+    <div class="semestre">
+      <h3>Semestre III</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Sin prerrequisitos">Estadística y Epidemiología</li>
+        <li data-tooltip="Prerrequisito: Biología Celular">Histología</li>
+        <li data-tooltip="Prerrequisito: Biomoléculas Estructurales y Función">Fundamentos en Bioquímica</li>
+        <li data-tooltip="Prerrequisito: Anatomía">Fisiología</li>
+        <li data-tooltip="Sin prerrequisitos">Salud y Sociedad</li>
+        <li data-tooltip="Sin prerrequisitos">Electivo Formación General II</li>
+      </ul>
+    </div>
+    <div class="semestre">
+      <h3>Semestre IV</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Atención Básica de Urgencia">Bioseguridad y procesos preanalíticos</li>
+        <li data-tooltip="Prerrequisito: Histología">Inmunología Básica</li>
+        <li data-tooltip="Prerrequisito: Fundamentos en Bioquímica">Bioquímica Clínica I</li>
+        <li data-tooltip="Prerrequisito: Fisiología">Fisiopatología</li>
+        <li data-tooltip="Sin prerrequisitos">Ética Profesional</li>
+        <li data-tooltip="Sin prerrequisitos">Electivo Formación General III</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-    <!-- Ramo 3 -->
-    <tr>
-      <td>Taller Integrado en Ciencias</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Taller Integrado en Ciencias</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Taller Integrado en Ciencias">Biomoléculas Estructurales y Función</td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="vacío"></td>
-    </tr>
+<!-- Tercer Año -->
+<div class="año">
+  <div class="años-titulo">Tercer Año</div>
+  <div class="tabla-semestres">
+    <div class="semestre">
+      <h3>Semestre V</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Fundamentos en Bioquímica">Microbiología Básica</li>
+        <li data-tooltip="Prerrequisito: Inmunología Básica">Inmunología Clínica</li>
+        <li data-tooltip="Prerrequisito: Bioquímica Clínica I, Fisiopatología">Bioquímica Clínica II</li>
+        <li data-tooltip="Prerrequisito: Bioquímica Clínica I">Gestión de Calidad y Administración de Laboratorio</li>
+        <li data-tooltip="Sin prerrequisitos">Persona y Sentido</li>
+      </ul>
+    </div>
+    <div class="semestre">
+      <h3>Semestre VI</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Microbiología Básica, Fisiopatología">Microbiología Clínica</li>
+        <li data-tooltip="Prerrequisito: Microbiología Básica">Diagnóstico Molecular</li>
+        <li data-tooltip="Prerrequisito: Inmunología Clínica">Parasitología Clínica</li>
+        <li data-tooltip="Prerrequisito: Gestión de Calidad y Administración de Laboratorio">Electivo I</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-    <!-- Ramo 4 -->
-    <tr>
-      <td>Introducción a la Tecnología Médica</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Introducción a la Tecnología Médica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
+<!-- Cuarto Año -->
+<div class="año">
+  <div class="años-titulo">Cuarto Año</div>
+  <div class="tabla-semestres">
+    <div class="semestre">
+      <h3>Semestre VII</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Inmunología Clínica">Inmunohematología</li>
+        <li data-tooltip="Prerrequisito: Fisiopatología">Hematología Básica</li>
+        <li data-tooltip="Prerrequisitos: Parasitología Clínica, Microbiología Clínica, Bioquímica Clínica II">Integrado Clínico I</li>
+        <li data-tooltip="Prerrequisito: Electivo I">Electivo II</li>
+      </ul>
+    </div>
+    <div class="semestre">
+      <h3>Semestre VIII</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisito: Inmunohematología">Medicina Transfusional</li>
+        <li data-tooltip="Prerrequisitos: Hematología Básica, Diagnóstico Molecular">Hematología Clínica</li>
+        <li data-tooltip="Prerrequisitos: Hematología Básica, Integrado Clínico I">Metodología de la Investigación</li>
+        <li data-tooltip="Prerrequisito: Electivo II">Electivo III</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-    <!-- Ramo 5 -->
-    <tr>
-      <td>Inglés I</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Inglés I</td>
-      <td class="ramo" data-tooltip="Prerrequisito: Inglés I">Inglés II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 6 -->
-    <tr>
-      <td>Taller de Competencias Comunicativas</td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Taller de Competencias Comunicativas</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 7 -->
-    <tr>
-      <td>Biofísica</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Principios Matemáticos">Biofísica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 8 -->
-    <tr>
-      <td>Atención Básica de Urgencia</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Atención Básica de Urgencia</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 9 -->
-    <tr>
-      <td>Anatomía</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Anatomía</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 10 -->
-    <tr>
-      <td>Electivo Formación General I</td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Electivo Formación General I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 11 -->
-    <tr>
-      <td>Estadística y Epidemiología</td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Estadística y Epidemiología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 12 -->
-    <tr>
-      <td>Fundamentos en Bioquímica</td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Biomoléculas Estructurales y Función">Fundamentos en Bioquímica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 13 -->
-    <tr>
-      <td>Fisiología</td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Anatomía">Fisiología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 14 -->
-    <tr>
-      <td>Salud y Sociedad</td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Salud y Sociedad</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 15 -->
-    <tr>
-      <td>Electivo Formación General II</td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Electivo Formación General II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 16 -->
-    <tr>
-      <td>Bioseguridad y procesos preanalíticos</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Atención Básica de Urgencia">Bioseguridad y procesos preanalíticos</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 17 -->
-    <tr>
-      <td>Inmunología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Histología">Inmunología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 18 -->
-    <tr>
-      <td>Bioquímica Clínica I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Fundamentos en Bioquímica">Bioquímica Clínica I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 19 -->
-    <tr>
-      <td>Fisiopatología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Fisiología">Fisiopatología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 20 -->
-    <tr>
-      <td>Ética Profesional</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Ética Profesional</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 21 -->
-    <tr>
-      <td>Electivo Formación General III</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Electivo Formación General III</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 22 -->
-    <tr>
-      <td>Microbiología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Fundamentos en Bioquímica">Microbiología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 23 -->
-    <tr>
-      <td>Inmunología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Inmunología Básica">Inmunología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 24 -->
-    <tr>
-      <td>Bioquímica Clínica II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Bioquímica Clínica I y Fisiopatología">Bioquímica Clínica II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 25 -->
-    <tr>
-      <td>Gestión de Calidad y Administración de Laboratorio</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Bioquímica Clínica I">Gestión de Calidad y Administración de Laboratorio</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 26 -->
-    <tr>
-      <td>Persona y Sentido</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Sin prerrequisitos">Persona y Sentido</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 27 -->
-    <tr>
-      <td>Microbiología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Microbiología Básica, Fisiopatología">Microbiología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 28 -->
-    <tr>
-      <td>Diagnóstico Molecular</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Microbiología Básica">Diagnóstico Molecular</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 29 -->
-    <tr>
-      <td>Parasitología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Inmunología Clínica">Parasitología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 30 -->
-    <tr>
-      <td>Inmunohematología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Inmunología Clínica">Inmunohematología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 31 -->
-    <tr>
-      <td>Hematología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Fisiopatología">Hematología Básica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 32 -->
-    <tr>
-      <td>Integrado Clínico I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Parasitología Clínica, Microbiología Clínica, Bioquímica Clínica II">Integrado Clínico I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 33 -->
-    <tr>
-      <td>Medicina Transfusional</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Inmunohematología">Medicina Transfusional</td>
-      <td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 34 -->
-    <tr>
-      <td>Hematología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Hematología Básica, Diagnóstico Molecular">Hematología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 35 -->
-    <tr>
-      <td>Metodología de la Investigación</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Hematología Básica, Integrado Clínico I">Metodología de la Investigación</td>
-      <td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 36 -->
-    <tr>
-      <td>Análisis Integral de Casos Clínicos</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica, Electivo III">Análisis Integral de Casos Clínicos</td>
-      <td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 37 -->
-    <tr>
-      <td>Integrado Clínico II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica">Integrado Clínico II</td>
-      <td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 38 -->
-    <tr>
-      <td>Seminario de Investigación</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Metodología de la Investigación">Seminario de Investigación</td>
-      <td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 39 -->
-    <tr>
-      <td>Taller de Empleabilidad</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Metodología de la Investigación">Taller de Empleabilidad</td>
-      <td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 40 -->
-    <tr>
-      <td>Internado Profesional Micro-Parasitología</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Micro-Parasitología</td>
-    </tr>
-
-    <!-- Ramo 41 -->
-    <tr>
-      <td>Internado Profesional Hematología Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Hematología Clínica</td>
-    </tr>
-
-    <!-- Ramo 42 -->
-    <tr>
-      <td>Internado Profesional Medicina Transfusional</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Medicina Transfusional</td>
-    </tr>
-
-    <!-- Ramo 43 -->
-    <tr>
-      <td>Internado Profesional Química Clínica</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Química Clínica</td>
-    </tr>
-
-    <!-- Ramo 44 -->
-    <tr>
-      <td>Electivo I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Gestión de Calidad y Administración de Laboratorio">Electivo I</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 45 -->
-    <tr>
-      <td>Electivo II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Electivo I">Electivo II</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-    </tr>
-
-    <!-- Ramo 46 -->
-    <tr>
-      <td>Electivo III</td>
-      <td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td><td class="vacío"></td>
-      <td class="vacío"></td><td class="vacío"></td>
-      <td class="ramo" data-tooltip="Prerrequisito: Electivo II">Electivo III</td>
-      <td class="vacío"></td><td class="vacío"></td>
-    </tr>
-  </tbody>
-</table>
+<!-- Quinto Año -->
+<div class="año">
+  <div class="años-titulo">Quinto Año</div>
+  <div class="tabla-semestres">
+    <div class="semestre">
+      <h3>Semestre IX</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica, Electivo III">Análisis Integral de Casos Clínicos</li>
+        <li data-tooltip="Prerrequisitos: Medicina Transfusional, Hematología Clínica">Integrado Clínico II</li>
+        <li data-tooltip="Prerrequisito: Metodología de la Investigación">Seminario de Investigación</li>
+        <li data-tooltip="Prerrequisito: Metodología de la Investigación">Taller de Empleabilidad</li>
+      </ul>
+    </div>
+    <div class="semestre">
+      <h3>Semestre X</h3>
+      <ul class="ramos-lista">
+        <li data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Micro-Parasitología</li>
+        <li data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Hematología Clínica</li>
+        <li data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Medicina Transfusional</li>
+        <li data-tooltip="Prerrequisitos: Análisis Integral de Casos Clínicos, Integrado Clínico II, Seminario de Investigación, Taller de Empleabilidad">Internado Profesional Química Clínica</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <script>
-  // Selecciona todas las celdas con clase ramo
-  document.querySelectorAll('.ramo').forEach(celda => {
-    celda.addEventListener('click', () => {
-      celda.classList.toggle('marcado');
+  // Al hacer click, alterna tachado en el ramo
+  document.querySelectorAll('.ramos-lista li').forEach(ramo => {
+    ramo.addEventListener('click', () => {
+      ramo.classList.toggle('tachado');
     });
   });
 </script>
