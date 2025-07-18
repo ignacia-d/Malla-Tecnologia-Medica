@@ -1,41 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mi Malla Curricular</title>
+  <title>Malla Curricular Tecnología Médica</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #fff;
+      color: #000;
+      padding: 30px;
     }
     h1 {
+      text-align: center;
       color: #800000;
     }
-    .semester-link {
-      display: block;
-      margin: 10px 0;
-      color: #800000;
-      text-decoration: none;
-      font-weight: bold;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
     }
-    .semester-link:hover {
-      color: #ff4d4d;
+    th, td {
+      border: 1px solid #800000;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #ffe4e4;
+      color: #800000;
+    }
+    .ramo {
+      cursor: pointer;
+      padding: 4px;
+    }
+    .ramo:hover {
+      background-color: #ffe4e4;
+    }
+    .tachado {
+      text-decoration: line-through;
+      color: #999;
     }
   </style>
 </head>
 <body>
   <h1>Ignacia — Malla Tecnología Médica</h1>
-  <p>Haz clic en un semestre para ver sus ramos:</p>
-  <a class="semester-link" href="Semestre-I/index.html">Semestre I</a>
-  <a class="semester-link" href="Semestre-II/index.html">Semestre II</a>
-  <a class="semester-link" href="Semestre-III/index.html">Semestre III</a>
-  <a class="semester-link" href="Semestre-IV/index.html">Semestre IV</a>
-  <a class="semester-link" href="Semestre-V/index.html">Semestre V</a>
-  <a class="semester-link" href="Semestre-VI/index.html">Semestre VI</a>
-  <a class="semester-link" href="Semestre-VII/index.html">Semestre VII</a>
-  <a class="semester-link" href="Semestre-VIII/index.html">Semestre VIII</a>
-  <a class="semester-link" href="Semestre-IX/index.html">Semestre IX</a>
-  <a class="semester-link" href="Semestre-X/index.html">Semestre X</a>
+  <p>Haz clic para tachar los ramos. Los prerrequisitos deben estar completados antes de tachar los siguientes.</p>
+
+  <table>
+    <tr>
+      <th>Semestre I</th>
+      <th>Semestre II</th>
+      <th>Semestre III</th>
+      <th>Semestre IV</th>
+      <th>Semestre V</th>
+      <th>Semestre VI</th>
+      <th>Semestre VII</th>
+      <th>Semestre VIII</th>
+      <th>Semestre IX</th>
+      <th>Semestre X</th>
+    </tr>
+    <tr>
+      <td class="ramo" id="Biofisica" onclick="toggle(this)">Biofísica</td>
+      <td class="ramo" id="Estadistica" onclick="toggle(this)">Estadística</td>
+      <td class="ramo" id="BioquimicaI" onclick="check('Biofisica', this)">Bioquímica Clínica I</td>
+      <td class="ramo" id="BioquimicaII" onclick="check('BioquimicaI', this)">Bioquímica Clínica II</td>
+      <td class="ramo" id="MicrobiologiaBasica" onclick="check('BioquimicaII', this)">Microbiología Básica</td>
+      <td class="ramo" id="MicrobiologiaClinica" onclick="check('MicrobiologiaBasica', this)">Microbiología Clínica</td>
+      <td class="ramo" id="Hematologia" onclick="check('MicrobiologiaClinica', this)">Hematología Clínica</td>
+      <td class="ramo" id="Endocrinologia" onclick="check('BioquimicaII', this)">Endocrinología y Metabolismo</td>
+      <td class="ramo" id="Internado1" onclick="check('Hematologia', this)">Internado Profesional I</td>
+      <td class="ramo" id="Internado2" onclick="check('Internado1', this)">Internado Profesional II</td>
+    </tr>
+    <tr>
+      <td class="ramo" id="BiologiaCelular" onclick="toggle(this)">Biología Celular</td>
+      <td class="ramo" id="Histologia" onclick="check('BiologiaCelular', this)">Histología</td>
+      <td class="ramo" id="InmunologiaBasica" onclick="check('Histologia', this)">Inmunología Básica</td>
+      <td class="ramo" id="InmunologiaClinica" onclick="check('InmunologiaBasica', this)">Inmunología Clínica</td>
+      <td class="ramo" id="Parasitologia" onclick="check('MicrobiologiaBasica', this)">Parasitología Clínica</td>
+      <td class="ramo" id="DiagnosticoMolecular" onclick="check('BioquimicaII', this)">Diagnóstico Molecular</td>
+      <td class="ramo" id="Inmunohematologia" onclick="check('Hematologia', this)">Inmunohematología</td>
+      <td class="ramo" id="Uroanalisis" onclick="check('BioquimicaII', this)">Uroanálisis</td>
+      <td class="ramo" id="Proyecto" onclick="check('Internado1', this)">Proyecto Integrador</td>
+      <td class="ramo" id="ExamenTitulo" onclick="check('Internado2', this)">Examen de Título</td>
+    </tr>
+  </table>
+
+  <script>
+    function toggle(cell) {
+      cell.classList.toggle('tachado');
+    }
+
+    function check(prereqId, cell) {
+      const prereq = document.getElementById(prereqId);
+      if (prereq && prereq.classList.contains('tachado')) {
+        cell.classList.toggle('tachado');
+      } else {
+        alert('Debes aprobar "' + prereq.innerText + '" antes de marcar este ramo.');
+      }
+    }
+  </script>
 </body>
 </html>
