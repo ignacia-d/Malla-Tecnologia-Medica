@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f8f0f2;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #800020;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  color: #800020;
+  font-family: 'Raleway', sans-serif;
+}
+
+.malla {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.año {
+  margin-bottom: 3rem;
+}
+
+.semestre {
+  margin-bottom: 1.5rem;
+}
+
+.semestre h3 {
+  margin-bottom: 0.5rem;
+  color: #9b1c31;
+}
+
+.ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ramo {
+  background-color: #800020;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  position: relative;
+  cursor: default;
+  transition: transform 0.2s ease;
+  max-width: 220px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.ramo:hover {
+  background-color: #9b1c31;
+  transform: scale(1.05);
+}
+
+/* Tooltip */
+.ramo::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+
+.ramo:hover::after {
+  opacity: 1;
+}
