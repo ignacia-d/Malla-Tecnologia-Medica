@@ -24,7 +24,7 @@
       padding: 8px;
       text-align: left;
       vertical-align: top;
-      min-width: 150px;
+      min-width: 180px;
     }
     th {
       background-color: #ffe4e4;
@@ -63,63 +63,134 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+           <tr>
         <td>
-          <span class="ramo" id="PrincipiosMatematicos" onclick="toggle(this)">Principios Matemáticos</span>
-          <span class="ramo" id="BiologiaCelular" onclick="toggle(this)">Biología Celular</span>
-          <span class="ramo" id="TallerCiencias" onclick="toggle(this)">Taller Integrado en Ciencias</span>
-          <span class="ramo" id="IntroTM" onclick="toggle(this)">Introducción a la Tecnología Médica</span>
-          <span class="ramo" id="InglesI" onclick="toggle(this)">Inglés I</span>
-          <span class="ramo" id="Comunicacion" onclick="toggle(this)">Taller de Competencias Comunicativas</span>
+          <span class="ramo" id="PrincipiosMatematicos">Principios Matemáticos</span>
+          <span class="ramo" id="BiologiaCelular">Biología Celular</span>
+          <span class="ramo" id="TallerIntegradoCiencias">Taller Integrado en Ciencias</span>
+          <span class="ramo" id="IntroTecnologiaMedica">Introducción a la Tecnología Médica</span>
+          <span class="ramo" id="InglesI">Inglés I</span>
+          <span class="ramo" id="TallerComunicacion">Taller de Competencias Comunicativas</span>
         </td>
         <td>
-          <span class="ramo" id="Biofisica" onclick="check(['PrincipiosMatematicos'], this)">Biofísica</span>
-          <span class="ramo" id="Urgencia" onclick="toggle(this)">Atención Básica de Urgencia</span>
-          <span class="ramo" id="Biomoleculas" onclick="check(['TallerCiencias'], this)">Biomoléculas Estructurales y Función</span>
-          <span class="ramo" id="Anatomia" onclick="toggle(this)">Anatomía</span>
-          <span class="ramo" id="InglesII" onclick="check(['InglesI'], this)">Inglés II</span>
-          <span class="ramo" id="ElectivoFG1" onclick="toggle(this)">Electivo Formación General I</span>
+          <span class="ramo" id="Biofisica">Biofísica</span>
+          <span class="ramo" id="Urgencia">Atención Básica de Urgencia</span>
+          <span class="ramo" id="Biomoleculas">Biomoléculas Estructurales y Función</span>
+          <span class="ramo" id="Anatomia">Anatomía</span>
+          <span class="ramo" id="InglesII">Inglés II</span>
+          <span class="ramo" id="ElectivoFG1">Electivo Formación General I</span>
         </td>
         <td>
-          <span class="ramo" id="Estadistica" onclick="toggle(this)">Estadística y Epidemiología</span>
-          <span class="ramo" id="Histologia" onclick="check(['BiologiaCelular'], this)">Histología</span>
-          <span class="ramo" id="FundBioquimica" onclick="check(['Biomoleculas'], this)">Fundamentos en Bioquímica</span>
-          <span class="ramo" id="Fisiologia" onclick="check(['Anatomia'], this)">Fisiología</span>
-          <span class="ramo" id="SaludSociedad" onclick="toggle(this)">Salud y Sociedad</span>
-          <span class="ramo" id="ElectivoFG2" onclick="toggle(this)">Electivo Formación General II</span>
+          <span class="ramo" id="Estadistica">Estadística y Epidemiología</span>
+          <span class="ramo" id="Histologia">Histología</span>
+          <span class="ramo" id="FundBioquimica">Fundamentos en Bioquímica</span>
+          <span class="ramo" id="Fisiologia">Fisiología</span>
+          <span class="ramo" id="SaludSociedad">Salud y Sociedad</span>
+          <span class="ramo" id="ElectivoFG2">Electivo Formación General II</span>
         </td>
         <td>
-          <span class="ramo" id="Bioseguridad" onclick="check(['Urgencia'], this)">Bioseguridad y Procesos Preanalíticos</span>
-          <span class="ramo" id="InmunoBasica" onclick="check(['Histologia'], this)">Inmunología Básica</span>
-          <span class="ramo" id="BioquimicaI" onclick="check(['FundBioquimica'], this)">Bioquímica Clínica I</span>
-          <span class="ramo" id="Fisiopatologia" onclick="check(['Fisiologia'], this)">Fisiopatología</span>
-          <span class="ramo" id="Etica" onclick="toggle(this)">Ética Profesional</span>
-          <span class="ramo" id="ElectivoFG3" onclick="toggle(this)">Electivo Formación General III</span>
+          <span class="ramo" id="Bioseguridad">Bioseguridad y Procesos Preanalíticos</span>
+          <span class="ramo" id="InmunologiaBasica">Inmunología Básica</span>
+          <span class="ramo" id="BioquimicaI">Bioquímica Clínica I</span>
+          <span class="ramo" id="Fisiopatologia">Fisiopatología</span>
+          <span class="ramo" id="Etica">Ética Profesional</span>
+          <span class="ramo" id="ElectivoFG3">Electivo Formación General III</span>
         </td>
         <td>
-          <span class="ramo" id="MicroBasica" onclick="check(['FundBioquimica'], this)">Microbiología Básica</span>
-          <span class="ramo" id="InmunoClinica" onclick="check(['InmunoBasica'], this)">Inmunología Clínica</span>
-          <span class="ramo" id="BioquimicaII" onclick="check(['BioquimicaI'], this)">Bioquímica Clínica II</span>
-          <span class="ramo" id="GestionCalidad" onclick="check(['BioquimicaI'], this)">Gestión de Calidad y Administración</span>
-          <span class="ramo" id="PersonaSentido" onclick="toggle(this)">Persona y Sentido</span>
+          <span class="ramo" id="MicrobiologiaBasica">Microbiología Básica</span>
+          <span class="ramo" id="InmunologiaClinica">Inmunología Clínica</span>
+          <span class="ramo" id="BioquimicaII">Bioquímica Clínica II</span>
+          <span class="ramo" id="GestionLaboratorio">Gestión de Calidad y Administración de Laboratorio</span>
+          <span class="ramo" id="PersonaSentido">Persona y Sentido</span>
         </td>
         <td>
-          <span class="ramo" id="MicroClinica" onclick="check(['MicroBasica'], this)">Microbiología Clínica</span>
-          <span class="ramo" id="DiagMolecular" onclick="check(['MicroBasica'], this)">Diagnóstico Molecular</span>
-          <span class="ramo" id="Parasitologia" onclick="check(['InmunoClinica'], this)">Parasitología Clínica</span>
-          <span class="ramo" id="ElectivoI" onclick="check(['GestionCalidad'], this)">Electivo I</span>
+          <span class="ramo" id="MicrobiologiaClinica">Microbiología Clínica</span>
+          <span class="ramo" id="DiagnosticoMolecular">Diagnóstico Molecular</span>
+          <span class="ramo" id="Parasitologia">Parasitología Clínica</span>
+          <span class="ramo" id="ElectivoI">Electivo I</span>
         </td>
         <td>
-          <span class="ramo" id="Inmunohematologia" onclick="check(['InmunoClinica'], this)">Inmunohematología</span>
-          <span class="ramo" id="HematologiaBasica" onclick="check(['Fisiopatologia'], this)">Hematología Básica</span>
-          <span class="ramo" id="IntegradoI" onclick="check(['Parasitologia', 'MicroClinica', 'BioquimicaII'], this)">Integrado Clínico I</span>
-          <span class="ramo" id="ElectivoII" onclick="check(['ElectivoI'], this)">Electivo II</span>
+          <span class="ramo" id="Inmunohematologia">Inmunohematología</span>
+          <span class="ramo" id="HematologiaBasica">Hematología Básica</span>
+          <span class="ramo" id="IntegradoClinicoI">Integrado Clínico I</span>
+          <span class="ramo" id="ElectivoII">Electivo II</span>
         </td>
         <td>
-          <span class="ramo" id="MedTransfusional" onclick="check(['Inmunohematologia'], this)">Medicina Transfusional</span>
-          <span class="ramo" id="HematologiaClinica" onclick="check(['HematologiaBasica'], this)">Hematología Clínica</span>
-          <span class="ramo" id="Metodologia" onclick="check(['HematologiaBasica'], this)">Metodología de la Investigación</span>
-          <span class="ramo" id="ElectivoIII" onclick="check(['ElectivoII'], this)">Electivo III</span>
+          <span class="ramo" id="MedicinaTransfusional">Medicina Transfusional</span>
+          <span class="ramo" id="HematologiaClinica">Hematología Clínica</span>
+          <span class="ramo" id="Metodologia">Metodología de la Investigación</span>
+          <span class="ramo" id="ElectivoIII">Electivo III</span>
         </td>
         <td>
-          <span class="ramo"
+          <span class="ramo" id="CasosClinicos">Análisis Integral de Casos Clínicos</span>
+          <span class="ramo" id="IntegradoClinicoII">Integrado Clínico II</span>
+          <span class="ramo" id="SeminarioInvestigacion">Seminario de Investigación</span>
+          <span class="ramo" id="Empleabilidad">Taller de Empleabilidad</span>
+        </td>
+        <td>
+          <span class="ramo" id="InternadoMicro">Internado Profesional Micro-Parasitología</span>
+          <span class="ramo" id="InternadoHematologia">Internado Profesional Hematología Clínica</span>
+          <span class="ramo" id="InternadoTransfusional">Internado Profesional Medicina Transfusional</span>
+          <span class="ramo" id="InternadoQuimica">Internado Profesional Química Clínica</span>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+    <script>
+    const prerrequisitos = {
+      Biofisica: ["PrincipiosMatematicos"],
+      Biomoleculas: ["TallerIntegradoCiencias"],
+      InglesII: ["InglesI"],
+      Histologia: ["BiologiaCelular"],
+      FundBioquimica: ["Biomoleculas"],
+      Fisiologia: ["Anatomia"],
+      Bioseguridad: ["Urgencia"],
+      InmunologiaBasica: ["Histologia"],
+      BioquimicaI: ["FundBioquimica"],
+      Fisiopatologia: ["Fisiologia"],
+      MicrobiologiaBasica: ["FundBioquimica"],
+      InmunologiaClinica: ["InmunologiaBasica"],
+      BioquimicaII: ["BioquimicaI"],
+      GestionLaboratorio: ["BioquimicaI"],
+      MicrobiologiaClinica: ["MicrobiologiaBasica"],
+      DiagnosticoMolecular: ["MicrobiologiaBasica"],
+      Parasitologia: ["InmunologiaClinica"],
+      ElectivoI: ["GestionLaboratorio"],
+      Inmunohematologia: ["InmunologiaClinica"],
+      HematologiaBasica: ["Fisiopatologia"],
+      IntegradoClinicoI: ["Parasitologia", "MicrobiologiaClinica", "BioquimicaII"],
+      ElectivoII: ["ElectivoI"],
+      MedicinaTransfusional: ["Inmunohematologia"],
+      HematologiaClinica: ["HematologiaBasica"],
+      Metodologia: ["HematologiaBasica"],
+      ElectivoIII: ["ElectivoII"],
+      CasosClinicos: ["MedicinaTransfusional", "HematologiaClinica"],
+      IntegradoClinicoII: ["MedicinaTransfusional", "HematologiaClinica"],
+      SeminarioInvestigacion: ["Metodologia"],
+      Empleabilidad: ["Metodologia"],
+      InternadoMicro: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
+      InternadoHematologia: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
+      InternadoTransfusional: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"],
+      InternadoQuimica: ["CasosClinicos", "IntegradoClinicoII", "SeminarioInvestigacion", "Empleabilidad"]
+    };
+
+    document.querySelectorAll(".ramo").forEach(el => {
+      el.addEventListener("click", () => {
+        const id = el.id;
+        const requisitos = prerrequisitos[id];
+        if (requisitos) {
+          const completos = requisitos.every(pre => {
+            const celda = document.getElementById(pre);
+            return celda && celda.classList.contains("tachado");
+          });
+          if (!completos) {
+            alert("No puedes marcar este ramo sin aprobar su(s) prerrequisito(s).");
+            return;
+          }
+        }
+        el.classList.toggle("tachado");
+      });
+    });
+  </script>
+</body>
+</html>
