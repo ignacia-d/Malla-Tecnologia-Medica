@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Malla Curricular Tecnología Médica</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #000;
+      background-color: #ffffff;
+      color: #000000;
       padding: 30px;
     }
     h1 {
@@ -16,11 +17,11 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 30px;
     }
     th, td {
       border: 1px solid #800000;
-      padding: 8px;
+      padding: 10px;
       text-align: left;
       vertical-align: top;
     }
@@ -30,58 +31,61 @@
     }
     .ramo {
       cursor: pointer;
-      padding: 4px;
     }
     .ramo:hover {
-      background-color: #ffe4e4;
+      background-color: #f4dada;
     }
     .tachado {
       text-decoration: line-through;
-      color: #999;
+      color: #999999;
     }
   </style>
 </head>
 <body>
-  <h1>Ignacia — Malla Tecnología Médica</h1>
-  <p>Haz clic para tachar los ramos. Los prerrequisitos deben estar completados antes de tachar los siguientes.</p>
+  <h1>Malla Curricular Tecnología Médica<br>Mención en Laboratorio Clínico, Hematología y Medicina Transfusional</h1>
+  <p style="text-align:center;">Haz clic en cada ramo para tacharlo. No podrás marcar ramos con prerrequisitos pendientes.</p>
 
   <table>
-    <tr>
-      <th>Semestre I</th>
-      <th>Semestre II</th>
-      <th>Semestre III</th>
-      <th>Semestre IV</th>
-      <th>Semestre V</th>
-      <th>Semestre VI</th>
-      <th>Semestre VII</th>
-      <th>Semestre VIII</th>
-      <th>Semestre IX</th>
-      <th>Semestre X</th>
-    </tr>
-    <tr>
-      <td class="ramo" id="Biofisica" onclick="toggle(this)">Biofísica</td>
-      <td class="ramo" id="Estadistica" onclick="toggle(this)">Estadística</td>
-      <td class="ramo" id="BioquimicaI" onclick="check('Biofisica', this)">Bioquímica Clínica I</td>
-      <td class="ramo" id="BioquimicaII" onclick="check('BioquimicaI', this)">Bioquímica Clínica II</td>
-      <td class="ramo" id="MicrobiologiaBasica" onclick="check('BioquimicaII', this)">Microbiología Básica</td>
-      <td class="ramo" id="MicrobiologiaClinica" onclick="check('MicrobiologiaBasica', this)">Microbiología Clínica</td>
-      <td class="ramo" id="Hematologia" onclick="check('MicrobiologiaClinica', this)">Hematología Clínica</td>
-      <td class="ramo" id="Endocrinologia" onclick="check('BioquimicaII', this)">Endocrinología y Metabolismo</td>
-      <td class="ramo" id="Internado1" onclick="check('Hematologia', this)">Internado Profesional I</td>
-      <td class="ramo" id="Internado2" onclick="check('Internado1', this)">Internado Profesional II</td>
-    </tr>
-    <tr>
-      <td class="ramo" id="BiologiaCelular" onclick="toggle(this)">Biología Celular</td>
-      <td class="ramo" id="Histologia" onclick="check('BiologiaCelular', this)">Histología</td>
-      <td class="ramo" id="InmunologiaBasica" onclick="check('Histologia', this)">Inmunología Básica</td>
-      <td class="ramo" id="InmunologiaClinica" onclick="check('InmunologiaBasica', this)">Inmunología Clínica</td>
-      <td class="ramo" id="Parasitologia" onclick="check('MicrobiologiaBasica', this)">Parasitología Clínica</td>
-      <td class="ramo" id="DiagnosticoMolecular" onclick="check('BioquimicaII', this)">Diagnóstico Molecular</td>
-      <td class="ramo" id="Inmunohematologia" onclick="check('Hematologia', this)">Inmunohematología</td>
-      <td class="ramo" id="Uroanalisis" onclick="check('BioquimicaII', this)">Uroanálisis</td>
-      <td class="ramo" id="Proyecto" onclick="check('Internado1', this)">Proyecto Integrador</td>
-      <td class="ramo" id="ExamenTitulo" onclick="check('Internado2', this)">Examen de Título</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Semestre I</th>
+        <th>Semestre II</th>
+        <th>Semestre III</th>
+        <th>Semestre IV</th>
+        <th>Semestre V</th>
+        <th>Semestre VI</th>
+        <th>Semestre VII</th>
+        <th>Semestre VIII</th>
+        <th>Semestre IX</th>
+        <th>Semestre X</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ramo" id="Quimica" onclick="toggle(this)">Química General</td>
+        <td class="ramo" id="Fisica" onclick="toggle(this)">Biofísica</td>
+        <td class="ramo" id="BioquimicaI" onclick="check(['Quimica'], this)">Bioquímica Clínica I</td>
+        <td class="ramo" id="BioquimicaII" onclick="check(['BioquimicaI'], this)">Bioquímica Clínica II</td>
+        <td class="ramo" id="Microbasica" onclick="check(['BioquimicaII'], this)">Microbiología Básica</td>
+        <td class="ramo" id="Microclinica" onclick="check(['Microbasica'], this)">Microbiología Clínica</td>
+        <td class="ramo" id="Hematologia" onclick="check(['Microclinica'], this)">Hematología Clínica</td>
+        <td class="ramo" id="Inmunohematologia" onclick="check(['Hematologia'], this)">Inmunohematología</td>
+        <td class="ramo" id="Internado1" onclick="check(['Inmunohematologia'], this)">Internado Profesional I</td>
+        <td class="ramo" id="Internado2" onclick="check(['Internado1'], this)">Internado Profesional II</td>
+      </tr>
+      <tr>
+        <td class="ramo" id="Biocelular" onclick="toggle(this)">Biología Celular</td>
+        <td class="ramo" id="Histologia" onclick="check(['Biocelular'], this)">Histología</td>
+        <td class="ramo" id="InmunologiaBasica" onclick="check(['Histologia'], this)">Inmunología Básica</td>
+        <td class="ramo" id="InmunologiaClinica" onclick="check(['InmunologiaBasica'], this)">Inmunología Clínica</td>
+        <td class="ramo" id="Parasitologia" onclick="check(['Microbasica'], this)">Parasitología Clínica</td>
+        <td class="ramo" id="DiagnosticoMolecular" onclick="check(['BioquimicaII'], this)">Diagnóstico Molecular</td>
+        <td class="ramo" id="Uroanalisis" onclick="check(['BioquimicaII'], this)">Uroanálisis</td>
+        <td class="ramo" id="Electivo1" onclick="check(['BioquimicaII'], this)">Electivo I</td>
+        <td class="ramo" id="Electivo2" onclick="check(['Electivo1'], this)">Electivo II</td>
+        <td class="ramo" id="ExamenTitulo" onclick="check(['Internado2'], this)">Examen de Título</td>
+      </tr>
+    </tbody>
   </table>
 
   <script>
@@ -89,12 +93,19 @@
       cell.classList.toggle('tachado');
     }
 
-    function check(prereqId, cell) {
-      const prereq = document.getElementById(prereqId);
-      if (prereq && prereq.classList.contains('tachado')) {
+    function check(prereqs, cell) {
+      let ok = true;
+      prereqs.forEach(id => {
+        const pre = document.getElementById(id);
+        if (!pre || !pre.classList.contains('tachado')) {
+          ok = false;
+        }
+      });
+
+      if (ok) {
         cell.classList.toggle('tachado');
       } else {
-        alert('Debes aprobar "' + prereq.innerText + '" antes de marcar este ramo.');
+        alert("No puedes marcar este ramo sin aprobar su(s) prerrequisito(s).");
       }
     }
   </script>
